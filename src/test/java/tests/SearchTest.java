@@ -6,7 +6,7 @@ import page.MainPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class SearchTest extends TestBase {
+public class SearchTest extends BaseTest {
     MainPage mainPage = new MainPage();
 
     @CsvSource({

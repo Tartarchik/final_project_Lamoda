@@ -6,7 +6,7 @@ import page.MainPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class BasketTests extends TestBase {
+public class BasketTest extends BaseTest {
     MainPage mainPage = new MainPage();
 
     @Test

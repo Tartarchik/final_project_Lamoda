@@ -1,7 +1,12 @@
 package page;
 
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.List;
+
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
@@ -16,6 +21,7 @@ public class MainPage {
     private final SelenideElement dropdownListSizeShoes = $("._selectWrapper_1widv_10");
     private final SelenideElement sizeShoes = $$(".recaptcha").first().$("div");
     private final SelenideElement addToCartButton = $(withText("Добавить в корзину"));
+    private final ElementsCollection filterList = $$("._filters_py6ob_19 span");
 
     public MainPage openPage() {
         open("https://www.lamoda.ru/men-home/");
@@ -36,28 +42,37 @@ public class MainPage {
         shoesSection.click();
         return this;
     }
+
     public MainPage chooseShoes() {
         shoes.click();
         return this;
     }
+
     public MainPage openDropdownListSizeShoes() {
         dropdownListSizeShoes.click();
         return this;
     }
+
     public MainPage chooseSizeShoes() {
         sizeShoes.click();
         return this;
     }
+
     public MainPage addToCart() {
         addToCartButton.click();
         return this;
     }
-    public MainPage checkAddItemToTheCart(){
+
+    public MainPage checkAddItemToTheCart() {
         $(".d-modal__frame").$(byText("Товар добавлен в корзину")).parent()
                 .shouldHave(text("Товар добавлен в корзину"));
         return this;
     }
 
+    public MainPage checkFilterList(List<String> list) {
+        filterList.shouldHave(texts(list));
+        return this;
+    }
 
 
 }

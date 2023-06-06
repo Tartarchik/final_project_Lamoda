@@ -12,7 +12,7 @@ import page.components.Attachments;
 
 import java.util.Map;
 
-public class TestBase {
+public class BaseTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = System.getProperty("baseUrl","https://lamoda.ru");
