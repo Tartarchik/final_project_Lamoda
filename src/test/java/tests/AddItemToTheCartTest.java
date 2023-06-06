@@ -2,37 +2,41 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import page.BasketPage;
 import page.MainPage;
+import page.ShoesPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class BasketTest extends BaseTest {
+public class AddItemToTheCartTest extends BaseTest {
     MainPage mainPage = new MainPage();
+    ShoesPage shoesPage = new ShoesPage();
+    BasketPage basketPage = new BasketPage();
 
     @Test
-    @DisplayName("Добавления товара в корнизу")
+    @DisplayName("Добавления товара в корзину")
     void addItemToTheCart() {
 
         step("Открыть главную страницу Lamoda", () -> {
             mainPage.openPage();
         });
         step("Перейти в раздел кроссовки", () -> {
-            mainPage.openTheSneakersSection();
+            shoesPage.openTheShoesSection();
         });
         step("Выбрать кроссовки в разделе", () -> {
-            mainPage.chooseShoes();
+            shoesPage.chooseShoes();
         });
         step("Открыть список размеров", () -> {
-            mainPage.openDropdownListSizeShoes();
+            shoesPage.openDropdownListSizeShoes();
         });
         step("Выбрать размер", () -> {
-            mainPage.chooseSizeShoes();
+            shoesPage.chooseSizeShoes();
         });
         step("Добавить кроссовки в корзину", () -> {
-            mainPage.addToCart();
+            basketPage.addToCart();
         });
         step("Проверка добавления товара в корнизу", () -> {
-            mainPage.checkAddItemToTheCart();
+            basketPage.checkAddItemToTheCart();
         });
     }
 }

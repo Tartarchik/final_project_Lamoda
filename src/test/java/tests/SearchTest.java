@@ -23,7 +23,7 @@ public class SearchTest extends BaseTest {
             mainPage.searchBox(data);
         });
         step("Проверить наличие title" + expText + "по результатам поиска", () -> {
-            mainPage.verifResultTitle(expText);
+            mainPage.verifyResultTitle(expText);
         });
     }
 }
