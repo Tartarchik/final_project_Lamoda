@@ -48,3 +48,9 @@ test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 }
+
+task ui_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("UI")
+    }
+}

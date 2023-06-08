@@ -1,12 +1,14 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import page.BasketPage;
 import page.MainPage;
 import page.ShoesPage;
 
 import static io.qameta.allure.Allure.step;
+@Tag("UI")
 
 public class AddItemToTheCartTest extends BaseTest {
     MainPage mainPage = new MainPage();

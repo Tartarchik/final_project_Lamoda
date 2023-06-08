@@ -1,11 +1,12 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import page.MainPage;
 
 import static io.qameta.allure.Allure.step;
-
+@Tag("UI")
 public class SearchTest extends BaseTest {
     MainPage mainPage = new MainPage();
 
