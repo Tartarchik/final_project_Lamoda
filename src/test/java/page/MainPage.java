@@ -12,7 +12,7 @@ public class MainPage {
 
     private final SelenideElement inputSearch = $("._input_1su1z_19");
     private final SelenideElement titleSearch = $("._title_641wy_6 h2");
-    private final SelenideElement inputEmail = $("[placeholder ='Введите свой email']");
+    private final SelenideElement inputEmail = $("[name='Электронная почта']");
     private final SelenideElement subscriptionButton = $(byText("Для него"));
     private final ElementsCollection subscriptionMessage = $$("._body_1ud0a_107");
     private final SelenideElement panelHelp = $("div").$(".details__panel");
