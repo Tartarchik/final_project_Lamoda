@@ -38,7 +38,7 @@
 ### Локальный запуск тестов
 
 ```
-clean ui_test  
+gradle clean ui_test  
 ```
 
 <a id="jenkins"></a>
