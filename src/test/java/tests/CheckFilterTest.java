@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,6 @@ import java.util.List;
 
 import static io.qameta.allure.Allure.step;
 @Tag("UI")
-
 public class CheckFilterTest extends BaseTest {
     MainPage mainPage = new MainPage();
     ShoesPage shoesPage = new ShoesPage();
@@ -18,6 +18,7 @@ public class CheckFilterTest extends BaseTest {
             "Помогаю планете", "Сезон", "Стиль", "Только со скидкой");
 
     @Test
+    @Owner("renat.khairullin")
     @DisplayName("Проверка наличия фильтров в разделе обувь")
     void checkingForFiltersInTheShoesSection() {
         step("Открыть главную страницу Lamoda", () -> {

@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,8 @@ public class AddItemToTheCartTest extends BaseTest {
     BasketPage basketPage = new BasketPage();
 
     @Test
-    @DisplayName("Добавления товара в корзину")
+    @Owner("renat.khairullin")
+    @DisplayName("Добавления товара в корзину из раздела обувь")
     void addItemToTheCart() {
 
         step("Открыть главную страницу Lamoda", () -> {
