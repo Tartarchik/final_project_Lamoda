@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BasketPage {
-    private final SelenideElement addToCartButton = $(withText("Добавить в корзину"));
+    private final SelenideElement addToCartButton = $("[aria-label='Добавить в корзину']");
     private final SelenideElement modalResultAddToTheCart = $(".d-modal__frame").$(byText("Товар добавлен в корзину"));
 
 
