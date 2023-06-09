@@ -16,6 +16,7 @@ public class MainPage {
     private final SelenideElement subscriptionButton = $(byText("Для него"));
     private final ElementsCollection subscriptionMessage = $$("._body_1ud0a_107");
     private final SelenideElement panelHelp = $("div").$(".details__panel");
+    private final SelenideElement product = $$(".grid__catalog").first().$("div");
 
     public MainPage openPage() {
         open("https://www.lamoda.ru/men-home/");
@@ -49,6 +50,10 @@ public class MainPage {
 
     public MainPage verifyPanelHelp(String expText) {
         panelHelp.shouldHave(text(expText));
+        return this;
+    }
+    public MainPage chooseProduct() {
+        product.click();
         return this;
     }
 
