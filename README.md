@@ -1,6 +1,6 @@
-<h1 >Демопроект автоматизации тестирования API на <a href="https://reqres.in/">reqres.in</a></h1>
+<h1 >Демопроект автоматизации тестирования на <a href="https://www.lamoda.ru/men-home/">Lamoda</a></h1>
 
-![WB_logo.jpg](media/logo/reqres_logo.png)
+![WB_logo.jpg](media/logo/lamoda_logo.png)
 
 ## :page_with_curl: Содержание
 
