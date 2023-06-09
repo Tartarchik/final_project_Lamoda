@@ -9,7 +9,6 @@ import page.ShoesPage;
 
 import static io.qameta.allure.Allure.step;
 @Tag("UI")
-
 public class AddItemToTheCartTest extends BaseTest {
     MainPage mainPage = new MainPage();
     ShoesPage shoesPage = new ShoesPage();
@@ -27,9 +26,6 @@ public class AddItemToTheCartTest extends BaseTest {
         });
         step("Выбрать кроссовки в разделе", () -> {
             shoesPage.chooseShoes();
-        });
-        step("Открыть список размеров", () -> {
-            shoesPage.openDropdownListSizeShoes();
         });
         step("Выбрать размер", () -> {
             shoesPage.chooseSizeShoes();

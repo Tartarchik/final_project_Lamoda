@@ -16,7 +16,7 @@ import java.util.Map;
 public class BaseTest {
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = System.getProperty("baseUrl","https://lamoda.ru");
+        Configuration.baseUrl = System.getProperty("baseUrl","https://www.lamoda.ru/men-home/");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion","100");
         Configuration.browserSize = System.getProperty("browserSize","1920x1080");
