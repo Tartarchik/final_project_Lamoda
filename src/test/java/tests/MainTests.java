@@ -5,13 +5,14 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import page.MainPage;
+import pages.MainPage;
 
 import java.util.Locale;
 
 import static io.qameta.allure.Allure.step;
+
 @Tag("UI")
-public class MainTests {
+public class MainTests extends BaseTest {
     public Faker fakerEn = new Faker(new Locale("en"));
     public String email = fakerEn.internet().emailAddress();
     public String expText = "Спасибо!\n" +
@@ -36,14 +37,14 @@ public class MainTests {
         step("Кликнуть кнопку \"Для него\" для подписки", () -> {
             mainPage.subscription();
         });
-        step("Проверка сообщения об успешной подписки", () -> {
+        step("Проверка сообщения об успешной подписке", () -> {
             mainPage.verifySubscription(expText);
         });
     }
 
     @Test
     @Owner("renat.khairullin")
-    @DisplayName("Проверка наличия элементов блока \"Помощь\" на главной страницы")
+    @DisplayName("Проверка наличия элементов блока \"Помощь\" на главной странице")
     void checkItemPanelHelp() {
 
         step("Открыть главную страницу Lamoda", () -> {

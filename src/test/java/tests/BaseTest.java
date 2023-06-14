@@ -8,35 +8,41 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import page.components.Attachments;
+import helpers.Attachments;
 
 
 import java.util.Map;
 
+import static config.WebDriverConfig.PROP;
+
 public class BaseTest {
     @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = System.getProperty("baseUrl","https://www.lamoda.ru/men-home/");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion","100");
-        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
-        Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+    public static void setUp() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.baseUrl = PROP.getBaseUrl();
+        Configuration.browser = PROP.getBrowserName();
+        Configuration.browserVersion = PROP.getBrowserVersion();
+        Configuration.browserSize = PROP.getBrowserSize();
+        Configuration.pageLoadTimeout = PROP.getPageLoadTimeout();
+        Configuration.timeout = PROP.getTimeout();
+        Configuration.headless = PROP.isHeadless();
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-
-        Configuration.browserCapabilities = capabilities;
+        if (PROP.isRemote()) {
+            Configuration.remote = PROP.getRemoteUrl();
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
+        }
     }
+
     @BeforeEach
-    void addListener(){
+    void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach
-    void attach(){
+    void attach() {
         Attachments.pageSource();
         Attachments.screenShot();
         Attachments.addConsoleLog();

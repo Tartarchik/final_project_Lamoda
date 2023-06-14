@@ -42,7 +42,7 @@ gradle clean ui_test
 ```
 
 <a id="jenkins"></a>
-## <img src="media/logo/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/Lamoda_Final_Project/)
+## <img src="media/logo/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/Students/job/Lamoda_Final_Project/)
 
 <p align="center">
 
@@ -61,7 +61,7 @@ gradle clean ui_test
 </p>
 
 <a id="allure"></a>
-## <img src="media/logo/Allure.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/Lamoda_Final_Project/18/allure/) отчеты
+## <img src="media/logo/Allure.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/Students/job/Lamoda_Final_Project/18/allure/) отчеты
 
 ### Основное окно
 
